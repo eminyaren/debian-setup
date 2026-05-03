@@ -1,6 +1,0 @@
-2026/05/03-20:41:18.466 663 Creating DB /home/emin/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_tr.pinterest.com_0.indexeddb.leveldb since it was missing.
-2026/05/03-20:41:18.479 663 Reusing MANIFEST /home/emin/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_tr.pinterest.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/05/03-20:41:41.840 664 Level-0 table #5: started
-2026/05/03-20:41:41.846 664 Level-0 table #5: 55107 bytes OK
-2026/05/03-20:41:41.850 664 Delete type=0 #3
-2026/05/03-20:41:41.851 664 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
