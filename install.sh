@@ -14,36 +14,46 @@ echo "Sistem güncelleniyor..."
 sudo apt update
 
 # 3. Donanım Kontrolü ve Paket Kurulumu
-echo "Donanım taranıyor..."
-sudo apt-get install -y nvidia-detect > /dev/null
+echo "------------------------------------------"
+echo "🔍 Donanım taranıyor..."
+sudo apt-get install -y nvidia-detect > /dev/null 2>&1
 
 # Nvidia kartı var mı kontrol et
 NVIDIA_CHECK=$(nvidia-detect)
 
 # Temel paket listesi (Nvidia hariç)
+# Temel paket listesi (XFCE ve Temel Araçlar)
 PACKAGES=(
-    curl git kitty blueman lightdm-gtk-greeter-settings 
-    lightdm-settings yaru-theme-gtk yaru-theme-icon 
+    xfce4 xfce4-goodies           # Masaüstü ortamı ve yardımcı araçlar
+    lightdm lightdm-gtk-greeter   # Giriş ekranı (Giriş yapmanı sağlar)
+    curl git kitty blueman 
+    lightdm-gtk-greeter-settings 
+    yaru-theme-gtk yaru-theme-icon 
     build-essential linux-headers-$(uname -r)
 )
 
-# Eğer çıktı "it is recommended to install the nvidia-driver package" içeriyorsa
+# Nvidia kontrolü
 if echo "$NVIDIA_CHECK" | grep -q "nvidia-driver"; then
-    echo "Nvidia ekran kartı tespit edildi, sürücü listeye ekleniyor."
+    echo "✅ Nvidia ekran kartı tespit edildi, sürücü listeye ekleniyor."
     PACKAGES+=("nvidia-driver")
 else
-    echo "Nvidia ekran kartı bulunamadı, sürücü kurulumu atlanıyor."
+    echo "ℹ️ Nvidia ekran kartı bulunamadı veya sanal makine kullanılıyor. Sürücü kurulumu atlanıyor."
 fi
 
-# Şimdi tüm paketleri tek seferde kur
-INSTALL_LOG=$(sudo apt-get install -y "${PACKAGES[@]}")
-echo "$INSTALL_LOG"
+echo "------------------------------------------"
+echo "📦 Paket kurulumu başlatılıyor..."
+echo "Kurulacaklar: ${PACKAGES[*]}"
+echo "------------------------------------------"
 
-REBOOT_REQUIRED=false
-if echo "$INSTALL_LOG" | grep -qE "newly installed|upgraded|reinstalled"; then
-    if ! echo "$INSTALL_LOG" | grep -q "0 upgraded, 0 newly installed"; then
-        REBOOT_REQUIRED=true
-    fi
+# Kurulumu canlı izleyebilmek için doğrudan çalıştırıyoruz
+sudo apt-get install -y "${PACKAGES[@]}"
+
+# Başarı kontrolü
+if [ $? -eq 0 ]; then
+    echo -e "\n✨ [TAMAMLANDI] Tüm paketler başarıyla kuruldu."
+else
+    echo -e "\n❌ [HATA] Bazı paketler kurulamadı. Lütfen internet bağlantınızı kontrol edin."
+    exit 1
 fi
 
 # 4. Brave Tarayıcı Kontrolü[cite: 2, 3]
