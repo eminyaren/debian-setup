@@ -1,0 +1,19 @@
+Predefined colors for City XFCE theme
+======================================
+These are the colors used in a theme pack
+
+
+
+Colors are in #RRGGBB format
+=============================
+YELLOW #EAB000
+WATTER #23B7E8
+WINE #FF4564
+GRASS #3DC431
+OCEAN #34ADAD
+RUBY #FF3387
+EMERALD #1BB272
+VIOLET #B045FF
+LIME #89AD1A
+TANGERINE #F28130
+

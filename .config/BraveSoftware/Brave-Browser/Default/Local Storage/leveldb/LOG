@@ -1,0 +1,30 @@
+2026/05/03-20:01:18.469 5 Reusing MANIFEST /home/emin/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
+2026/05/03-20:01:18.475 5 Recovering log #3
+2026/05/03-20:01:18.476 5 Reusing old log /home/emin/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/000003.log 
+2026/05/03-20:34:52.907 7 Level-0 table #5: started
+2026/05/03-20:34:52.915 7 Level-0 table #5: 23817 bytes OK
+2026/05/03-20:34:52.924 7 Delete type=0 #3
+2026/05/03-20:48:14.313 5 Level-0 table #7: started
+2026/05/03-20:48:14.322 5 Level-0 table #7: 41112 bytes OK
+2026/05/03-20:48:14.334 5 Delete type=0 #4
+2026/05/03-20:51:19.646 7 Level-0 table #9: started
+2026/05/03-20:51:19.654 7 Level-0 table #9: 28799 bytes OK
+2026/05/03-20:51:19.662 7 Delete type=0 #6
+2026/05/03-20:59:19.645 7 Level-0 table #11: started
+2026/05/03-20:59:19.656 7 Level-0 table #11: 41033 bytes OK
+2026/05/03-20:59:19.666 7 Delete type=0 #8
+2026/05/03-20:59:28.991 7 Level-0 table #13: started
+2026/05/03-20:59:29.000 7 Level-0 table #13: 35917 bytes OK
+2026/05/03-20:59:29.009 7 Delete type=0 #10
+2026/05/03-21:00:18.043 7 Level-0 table #15: started
+2026/05/03-21:00:18.050 7 Level-0 table #15: 69972 bytes OK
+2026/05/03-21:00:18.056 7 Delete type=0 #12
+2026/05/03-21:00:18.057 7 Compacting 4@0 + 1@1 files
+2026/05/03-21:00:18.064 7 Generated table #16@0: 130 keys, 86715 bytes
+2026/05/03-21:00:18.064 7 Compacted 4@0 + 1@1 files => 86715 bytes
+2026/05/03-21:00:18.070 7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/05/03-21:00:18.072 7 Delete type=2 #9
+2026/05/03-21:00:18.072 7 Delete type=2 #11
+2026/05/03-21:00:18.072 7 Delete type=2 #7
+2026/05/03-21:00:18.072 7 Delete type=2 #13
+2026/05/03-21:00:18.072 7 Delete type=2 #15

@@ -1,0 +1,4 @@
+[Added Associations]
+application/x-shellscript=org.xfce.mousepad.desktop;
+text/plain=org.xfce.mousepad.desktop;
+application/xml=org.xfce.mousepad.desktop;
