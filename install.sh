@@ -17,7 +17,7 @@ sudo apt update
 echo "Paket durumu kontrol ediliyor..."
 PACKAGES=(
 	xfce4 xfce4-goodies lightdm  # Masaüstü temeli
-    	curl git kitty blueman lightdm-gtk-greeter-settings 
+    	curl kitty blueman lightdm-gtk-greeter-settings 
     	lightdm-settings yaru-theme-gtk yaru-theme-icon 
     	build-essential linux-headers-$(uname -r) nvidia-driver
 )
