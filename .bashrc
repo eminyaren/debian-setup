@@ -133,8 +133,8 @@ prompt_arrow() {
 }
 
 # PS1 Tanımı
-# Karakterlerin yer kaplamaması için tput ve \[ \] beraber kullanılır
-export PS1="\[$C_CYAN\]\u\[$C_OFF\]@\[$C_PURPLE\]\h \[$C_YELLOW\]\w\[$C_OFF\] \$(prompt_arrow) "
+# Renk kodlarını [ ] içine alarak Bash'in satır uzunluğunu doğru hesaplamasını sağlıyoruz
+export PS1="\[\e[1;32m\]\u@\h\[\e[m\]:\[\e[1;34m\]\w\[\e[m\] \[\e[1;31m\]▶\[\e[m\] "
 # --- AKILLI ALIASLAR (KISAYOLLAR) ---
 
 # Dosya Listeleme (Daha renkli ve detaylı)
