@@ -13,15 +13,29 @@ fi
 echo "Sistem güncelleniyor..."
 sudo apt update
 
-# 3. Paket Durumu ve Kurulum
-echo "Paket durumu kontrol ediliyor..."
+# 3. Donanım Kontrolü ve Paket Kurulumu
+echo "Donanım taranıyor..."
+sudo apt-get install -y nvidia-detect > /dev/null
+
+# Nvidia kartı var mı kontrol et
+NVIDIA_CHECK=$(nvidia-detect)
+
+# Temel paket listesi (Nvidia hariç)
 PACKAGES=(
-	xfce4 xfce4-goodies lightdm  # Masaüstü temeli
-    	curl kitty blueman lightdm-gtk-greeter-settings 
-    	lightdm-settings yaru-theme-gtk yaru-theme-icon 
-    	build-essential linux-headers-$(uname -r) nvidia-driver
+    curl git kitty blueman lightdm-gtk-greeter-settings 
+    lightdm-settings yaru-theme-gtk yaru-theme-icon 
+    build-essential linux-headers-$(uname -r)
 )
 
+# Eğer çıktı "it is recommended to install the nvidia-driver package" içeriyorsa
+if echo "$NVIDIA_CHECK" | grep -q "nvidia-driver"; then
+    echo "Nvidia ekran kartı tespit edildi, sürücü listeye ekleniyor."
+    PACKAGES+=("nvidia-driver")
+else
+    echo "Nvidia ekran kartı bulunamadı, sürücü kurulumu atlanıyor."
+fi
+
+# Şimdi tüm paketleri tek seferde kur
 INSTALL_LOG=$(sudo apt-get install -y "${PACKAGES[@]}")
 echo "$INSTALL_LOG"
 
