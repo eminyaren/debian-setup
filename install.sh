@@ -24,7 +24,7 @@ NVIDIA_CHECK=$(nvidia-detect)
 # Temel paket listesi (Nvidia hariç)
 # Temel paket listesi (XFCE ve Temel Araçlar)
 PACKAGES=(
-    xfce4 xfce4-goodies           # Masaüstü ortamı ve yardımcı araçlar
+    xfce4 xfce4-goodies xdg-user-dirs           # Masaüstü ortamı ve yardımcı araçlar
     lightdm lightdm-gtk-greeter   # Giriş ekranı (Giriş yapmanı sağlar)
     curl git kitty blueman 
     lightdm-gtk-greeter-settings 
@@ -63,6 +63,13 @@ if ! command -v brave-browser &> /dev/null; then
     REBOOT_REQUIRED=true
 fi
 
+# 4.1 Kullanıcı Klasörlerini Oluşturma
+echo "------------------------------------------"
+echo "📂 Kullanıcı klasörleri yapılandırılıyor..."
+echo "------------------------------------------"
+
+# Klasörleri oluştur ve sisteme kaydet
+xdg-user-dirs-update --force
 # 5. Yapılandırma Dosyaları ve Terminal Seçimi
 echo "Konfigürasyonlar kontrol ediliyor..."
 mkdir -p ~/.config ~/.themes
