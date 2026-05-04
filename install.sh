@@ -80,6 +80,10 @@ cp ./.bashrc ~/.bashrc
 # Kitty'yi varsayılan terminal olarak ayarla[cite: 3]
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 
+# Lightdm ayarları
+chmod +x ./lightdm.sh
+./lightdm.sh
+
 # 6. Akıllı Blender Güncelleme (Yeni Bölüm)
 if [ -f "./blender_update.sh" ]; then
     chmod +x ./blender_update.sh

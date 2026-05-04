@@ -4,16 +4,6 @@
 configs:
 - level: 0
   monitors:
-  - id: "d004cf4faa9522f0b99f5962685401f01b415fdc"
-    display_name: "Samsung Electric Company S24F350 H4ZM701225 (HDMI-1-0)"
-    geometry:
-      x: 1920
-      y: 0
-      width: 1920
-      height: 1080
-  icons: {}
-- level: 0
-  monitors:
   - id: "0d61fa1c943344cae8df2d15b0c11d349589493c"
     display_name: "BOE 0x09EF (eDP-1)"
     geometry:
@@ -31,3 +21,13 @@ configs:
     "/home/emin":
       row: 0
       col: 0
+- level: 0
+  monitors:
+  - id: "d004cf4faa9522f0b99f5962685401f01b415fdc"
+    display_name: "Samsung Electric Company S24F350 H4ZM701225 (HDMI-1-0)"
+    geometry:
+      x: 1920
+      y: 0
+      width: 1920
+      height: 1080
+  icons: {}
