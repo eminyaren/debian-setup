@@ -2,10 +2,11 @@
 
 Bu depo, Debian 13 (Trixie) sisteminizi saniyeler içinde modernize etmek, gerekli sürücüleri kurmak ve Blender'ın her zaman en güncel sürümde kalmasını sağlamak için tasarlanmış profesyonel bir otomasyon setidir.
 
-🖥️ Sistemine Uygun Sürümü Seç
+** 🖥️ Sistemine Uygun Sürümü Seç
 Debian 13 (Trixie) Kullanıyorsanız: Doğrudan indirin.
 
-Devuan Kullanıyorsanız: Lütfen devuan dalını (branch) indirdiğinizden emin olun:
+**Devuan Kullanıyorsanız: Lütfen devuan dalını (branch) indirdiğinizden emin olun:
+
 git clone -b devuan [REPO_URL]
 
 ## ✨ Öne Çıkan Özellikler
