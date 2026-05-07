@@ -7,5 +7,12 @@ if [ -f "./lightdm-gtk-greeter.conf" ]; then
     
 fi
 
+# lightdm.sh içine eklenecek Devuan uyumlu servis başlatma
+if [ -f /sbin/init ]; then
+    # SysVinit kullanılıyorsa
+    sudo update-rc.d lightdm enable
+    sudo service lightdm start
+fi
+
 # Sahipliği root'tan kullanıcıya geri alıyoruz
 sudo chown -R $USER:$USER ~/.config ~/.themes ~/.bashrc

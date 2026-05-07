@@ -22,10 +22,11 @@ sudo apt-get install -y nvidia-detect > /dev/null 2>&1
 NVIDIA_CHECK=$(nvidia-detect)
 
 # Temel paket listesi (Nvidia hariç)
-# Temel paket listesi (XFCE ve Temel Araçlar)
+# Temel paket listesi (Devuan Uyumlu)
 PACKAGES=(
-    xfce4 xfce4-goodies xdg-user-dirs           # Masaüstü ortamı ve yardımcı araçlar
-    lightdm lightdm-gtk-greeter   # Giriş ekranı (Giriş yapmanı sağlar)
+    xfce4 xfce4-goodies xdg-user-dirs           
+    lightdm lightdm-gtk-greeter
+    dbus-x11 elogind                      # Devuan için kritik: Oturum yönetimi ve D-Bus
     curl git kitty blueman 
     lightdm-gtk-greeter-settings 
     yaru-theme-gtk yaru-theme-icon 
